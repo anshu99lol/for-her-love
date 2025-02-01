@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Tanishka</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffcccc;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        h1 {
+            font-size: 36px;
+            color: #ff4d4d;
+        }
+        p {
+            font-size: 20px;
+            color: #b30000;
+            max-width: 600px;
+            margin: auto;
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            from { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            to { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday Tanishka, You Are the Best! I Love You a Lot</h1>
+        <p>Like the moon that graces the night, <br>
+           You shine with a glow, pure and bright. <br>
+           Your beauty rivals the stars above, <br>
+           Wrapped in warmth, kindness, and love. <br>
+           In your eyes, the universe gleams, <br>
+           Holding my heart in endless dreams. <br>
+           Just like the moon lights up the sky, <br>
+           You brighten my world as days go by.</p>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.textContent = "❤️ I Love You ❤️";
+            document.body.appendChild(heart);
+            
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
